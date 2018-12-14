@@ -1,0 +1,2 @@
+packing.bat  -- springboot 瘦打包，只打包web,lib包
+fat-packing.bat  -- 将整个工程打包
