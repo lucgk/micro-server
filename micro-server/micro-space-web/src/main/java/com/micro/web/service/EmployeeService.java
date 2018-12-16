@@ -12,6 +12,7 @@ import com.micro.web.entity.excel.EmployeeExcel;
 import com.micro.web.entity.model.Employee;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,12 +25,15 @@ import java.util.List;
 @Service
 public class EmployeeService {
 
-    @Resource
+    @Autowired
     private EmployeeDao employeeDao;
 
-    public void saveEmployee() {
-        Employee ee = new Employee("zs",12, SexEnum.MALE.getCode(),"深圳");
-        employeeDao.insertEmployee(ee);
+    public void saveEmployee(Employee employee) {
+        if(employee.getId()>0){
+            employeeDao.insertEmployee(employee);
+        }else {
+            employeeDao.updateEmployee(employee);
+        }
     }
 
     public List<IExcel> excelImport(MultipartFile excelFile, String tableName) throws CommonException {

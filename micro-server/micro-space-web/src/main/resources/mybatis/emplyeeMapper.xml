@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="wood.tech.springboot.fw01.dao.model.EmployeeDao">
+<mapper namespace="com.micro.web.dao.model.EmployeeDao">
 
 	<sql id="allColWithoutId">
 		`name`,`age`,`sex`,`address`,`create_time` createTime,`update_time` updateTime
@@ -19,7 +19,7 @@
 	</insert>
 	
 
-	<update id="updateEmployeeById" parameterType="Employee">
+	<update id="updateEmployee" parameterType="Employee">
 		UPDATE
 		<if test="dbName != null and dbName != ''">
 			${dbName}.

@@ -5,8 +5,9 @@ import com.micro.web.common.config.excel.IExcel;
 import com.micro.web.common.json.JsonMapper;
 import com.micro.web.common.utils.RetJsonMsg;
 import com.micro.web.controller.BaseController;
+import com.micro.web.entity.model.Employee;
 import com.micro.web.service.EmployeeService;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +25,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.util.List;
 
+@Api(tags = {"测试接口"},description = "测试接口描述",produces = "For example, \"application/json, application/xml\"",consumes = "For example, \"application/json, application/xml\""
+ ,protocols = "http, https, ws, wss",hidden = false)
 @Controller
 @RequestMapping("/employ")
 public class EmployeeController extends BaseController {
@@ -35,24 +38,21 @@ public class EmployeeController extends BaseController {
 
     private static JsonMapper mapper = new JsonMapper(JsonInclude.Include.ALWAYS);
 
-    @ApiOperation(value = "保存")
-    @RequestMapping("/saveEmployee")
-    public RetJsonMsg saveEmployee(String params){
+    @ApiOperation(value = "保存职工信息")
+    @ApiResponses({
+            @ApiResponse(code = 200 ,message = "请求成功",response = RetJsonMsg.class)
+    })
+    @RequestMapping(value = "/saveEmployee",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public RetJsonMsg saveEmployee(@ApiParam(value = "employee",required = true)Employee employee){
         logger.info("EmployeeController saveEmployee start............................");
         RetJsonMsg retJson = new RetJsonMsg();
         try {
-            employeeService.saveEmployee();
-            if(StringUtils.isNotBlank(params)){
-//              Employee sdt = mapper.fromJson(params, Employee.class);
-                employeeService.saveEmployee();
-                retJson.setMsg("保存集成模式表成功");
-            }else{
-                retJson.setMsg("获取表信息失败，保存失败！");
-            }
+            employeeService.saveEmployee(employee);
         } catch (Exception e) {
             retJson.setFail();
-            retJson.setMsg("保存集成模式表失败!");
-            logger.error("保存集成模式表失败", e);
+            retJson.setMsg("保存职工信息失败!");
+            logger.error("保存职工信息失败", e);
         }
         logger.info("EmployeeController saveEmployee end............................");
         return retJson;

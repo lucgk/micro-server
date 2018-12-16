@@ -28,8 +28,8 @@
             <directory>src/main/resources</directory>
             <outputDirectory>${project.artifactId}-${project.version}/config</outputDirectory>
             <excludes>
-                <exclude>**/application*.properties</exclude>
-                <exclude>**/*.bak</exclude>
+              <!--  <exclude>**/application*.properties</exclude>
+                <exclude>**/*.bak</exclude>-->
                 <exclude>mybatis/**/*</exclude>
 				<exclude>mybatis</exclude>
 				<exclude>sql/**/*</exclude>

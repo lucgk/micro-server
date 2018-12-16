@@ -15,6 +15,8 @@ public interface EmployeeDao extends MyBatisCrudRepository {
 
     void insertEmployee(Employee ee);
 
+    void updateEmployee(Employee ee);
+
     List<IExcel> getExcelDatas(EmployeeExcel sdtcExcel);
 
 }

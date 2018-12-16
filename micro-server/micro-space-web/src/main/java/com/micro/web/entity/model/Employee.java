@@ -3,21 +3,29 @@ package com.micro.web.entity.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.micro.web.common.config.ConfigLoadUtil;
 import com.micro.web.common.constants.SysContants;
-import com.micro.web.entity.common.PageEntity;
+import com.micro.web.entity.common.IdEntity;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
 
-public class Employee extends PageEntity {
+@ApiModel(value = "Employee",description = "职员信息")
+public class Employee extends IdEntity {
 
+    @ApiModelProperty(value = "name",notes = "职员名称",required = true)
     private String name;
 
+    @ApiModelProperty(value = "age",notes = "职员年龄")
     private int age;
 
+    @ApiModelProperty(value = "sex",notes = "职员性别")
     private int sex;
 
+    @ApiModelProperty(value = "address",notes = "职员住址")
     private String address;
 
+    @ApiModelProperty(value = "dbName",notes = "扩展数据库",hidden = true)
     private String dbName;//数据库名字[将要从哪个库获取数据质量表信息]
 
     public String getDbName() {
@@ -36,9 +44,11 @@ public class Employee extends PageEntity {
     }
 
     /**更新时间*/
+    @ApiModelProperty(value = "updateTime",notes = "更新时间",hidden = true)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
     private Date updateTime;
     /**创建时间*/
+    @ApiModelProperty(value = "createTime",notes = "创建时间",hidden = true)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
     private Date createTime;
 
