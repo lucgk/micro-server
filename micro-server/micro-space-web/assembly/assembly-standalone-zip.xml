@@ -29,11 +29,11 @@
             <outputDirectory>${project.artifactId}-${project.version}/config</outputDirectory>
             <excludes>
               <!--  <exclude>**/application*.properties</exclude>
-                <exclude>**/*.bak</exclude>-->
+                <exclude>**/*.bak</exclude>
                 <exclude>mybatis/**/*</exclude>
 				<exclude>mybatis</exclude>
 				<exclude>sql/**/*</exclude>
-				<exclude>sql</exclude>
+				<exclude>sql</exclude>-->
             </excludes>
             <includes>
             	<include>**/*</include>

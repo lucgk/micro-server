@@ -12,7 +12,7 @@
     <appender name="businessLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/scaff.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>logs/scaff-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+            <fileNamePattern>logs/micro-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
             <maxHistory>3</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>200MB</maxFileSize>
@@ -25,7 +25,7 @@
     </appender>
 
     <!-- project default level  mybatis log 需将level 改为debug -->
-	<logger name="com.surfilter.monitor" level="INFO" />
+	<logger name="com.micro.web" level="INFO" />
 	<logger name="com.atomikos" level="ERROR" />
 	<!-- <logger name="org.springframework.boot.web" level="DEBUG" /> -->
 	<logger name="org.apache.tomcat.util.scan.StandardJarScanner" level="ERROR" />
