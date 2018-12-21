@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.web.dao.authenticate.UserDao">
+
+	<sql id="allColWithoutId">
+		`name`,`age`,`sex`,`address`,`create_time` createTime,`update_time` updateTime
+	</sql>
+	<sql id="allColumns">
+		id, <include refid="allColWithoutId" />
+	</sql>
+
+	<insert id="insertEmployee" parameterType="Employee" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+		<if test="dbName != null and dbName != ''">
+			${dbName}.
+		</if>
+		employee(`name`,`age`,`sex`,`address`,`create_time`,`update_time`)
+		VALUES (#{name},#{age}, #{sex},#{address},NOW(),NOW())
+	</insert>
+	
+
+	<update id="updateEmployee" parameterType="Employee">
+		UPDATE
+		<if test="dbName != null and dbName != ''">
+			${dbName}.
+		</if>
+			employee SET
+				`name`=#{name},
+				`age`=#{age},
+				`sex`=#{sex},
+		        `address`=#{address},
+				 updateTime=NOW()
+		WHERE id=#{id}
+	</update>
+	
+	<delete id="deleteEmployeeById" parameterType="Employee">
+		DELETE FROM
+		<if test="dbName != null and dbName != ''">
+			${dbName}.
+		</if>
+		employee WHERE id=#{id}
+	</delete>
+
+	<sql id="queryWhere">
+		FROM
+		<if test="dbName != null and dbName != ''">
+			${dbName}.
+		</if>
+		employee
+		<where>
+			<if test="search != null and search != ''">
+				AND `name` LIKE  CONCAT(CONCAT('%', #{search}), '%') or `address` LIKE CONCAT(CONCAT('%', #{search}), '%')
+			</if>
+			<if test="dataLeave != null and dataLeave != ''">
+				AND age = #{age}
+			</if>
+		</where>
+	</sql>
+
+
+	<sql id="queryOrderPage">
+		<if test="orderBy != null and orderBy != ''">
+			ORDER BY ${orderBy}
+			<if test="order != null and order != ''">
+				${order}
+			</if>
+		</if>
+		<if test="size != null and size != 0">
+			LIMIT #{start}, #{size}
+		</if>
+	</sql>
+	
+	<select id="queryByPage" parameterType="Employee" resultType="Employee">
+		SELECT <include refid="allColumns"></include>
+		<include refid="queryWhere"></include>
+		<include refid="queryOrderPage"></include>
+	</select>
+	
+	<select id="queryTotalCount" parameterType="Employee" resultType="long">
+		SELECT COUNT(1)
+		<include refid="queryWhere"></include>
+	</select>
+
+	<select id="getExcelDatas" parameterType="EmployeeExcel"  resultType="EmployeeExcel">
+		SELECT <include refid="allColumns"/>
+		FROM
+		<if test="dbName != null and dbName != ''">
+			${dbName}.
+		</if>
+		employee  limit 20
+	</select>
+</mapper>
