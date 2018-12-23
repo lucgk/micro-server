@@ -1,3 +1,4 @@
+/*
 package com.micro.web.entity.authenticate;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -17,10 +18,12 @@ public class User implements UserDetails {
     private List<Role> roles;
 
 
-    /**
+    */
+/**
      * 获取当前用户所具有的角色
      * @return
-     */
+     *//*
+
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         for (Role role : roles) {
@@ -93,3 +96,4 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 }
+*/

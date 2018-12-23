@@ -1,3 +1,4 @@
+/*
 package com.micro.web.service.authenticate;
 
 import com.micro.web.dao.authenticate.UserDao;
@@ -9,8 +10,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
-@Transactional
+//@Service
+//@Transactional
 public class UserService implements UserDetailsService {
 
     @Autowired
@@ -24,3 +25,4 @@ public class UserService implements UserDetailsService {
         return user;
     }
 }
+*/

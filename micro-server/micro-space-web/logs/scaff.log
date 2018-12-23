@@ -172,3 +172,253 @@
 2018/12/21 14:35:52 [restartedMain] INFO  o.e.j.s.AbstractConnector:292 - Started ServerConnector@62d7a90{HTTP/1.1,[http/1.1]}{0.0.0.0:6666}
 2018/12/21 14:35:52 [restartedMain] INFO  o.s.b.w.e.j.JettyWebServer:157 - Jetty started on port(s) 6666 (http/1.1) with context path '/space'
 2018/12/21 14:35:52 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:59 - Started MicroSpaceWebApplication in 3.355 seconds (JVM running for 4.539)
+2018/12/21 21:06:44 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:50 - Starting MicroSpaceWebApplication on P-V-10 with PID 12988 (E:\GIT\micro\micro-server\micro-space-web\target\classes started by Administrator in E:\GIT\micro\micro-server\micro-space-web)
+2018/12/21 21:06:44 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:675 - No active profile set, falling back to default profiles: default
+2018/12/21 21:06:44 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/21 21:06:44 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/21 21:06:45 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$15110feb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018/12/21 21:06:46 [restartedMain] INFO  o.e.j.u.log:193 - Logging initialized @3101ms to org.eclipse.jetty.util.log.Slf4jLog
+2018/12/21 21:06:46 [restartedMain] INFO  o.s.b.w.e.j.JettyServletWebServerFactory:143 - Server initialized with port: 6666
+2018/12/21 21:06:46 [restartedMain] INFO  o.e.j.s.Server:371 - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_191-b12
+2018/12/21 21:06:46 [restartedMain] INFO  o.e.j.s.session:365 - DefaultSessionIdManager workerName=node0
+2018/12/21 21:06:46 [restartedMain] INFO  o.e.j.s.session:370 - No SessionScavenger set, using defaults
+2018/12/21 21:06:46 [restartedMain] INFO  o.e.j.s.session:149 - node0 Scavenging every 660000ms
+2018/12/21 21:06:46 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring embedded WebApplicationContext
+2018/12/21 21:06:46 [restartedMain] INFO  o.s.w.c.ContextLoader:296 - Root WebApplicationContext: initialization completed in 1285 ms
+2018/12/21 21:06:46 [restartedMain] INFO  o.e.j.s.h.ContextHandler:850 - Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@14eb800a{application,/space,[file:///C:/Users/Administrator/AppData/Local/Temp/jetty-docbase.5839140300369650005.6666/, jar:file:/D:/software/Maven/repository/io/springfox/springfox-swagger-ui/2.8.0/springfox-swagger-ui-2.8.0.jar!/META-INF/resources],AVAILABLE}
+2018/12/21 21:06:46 [restartedMain] INFO  o.e.j.s.Server:408 - Started @3304ms
+2018/12/21 21:06:46 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.micro.web.common.config.ConfigLoadUtil.env
+2018/12/21 21:06:46 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:43 - Initialized sqliteDataSource
+2018/12/21 21:06:46 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:51 - sqliteDataSource datasource: org.sqlite.javax.SQLiteConnectionPoolDataSource
+2018/12/21 21:06:46 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018/12/21 21:06:46 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/21 21:06:46 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018/12/21 21:06:47 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3de98516, org.springframework.security.web.context.SecurityContextPersistenceFilter@73707bea, org.springframework.security.web.header.HeaderWriterFilter@4c58b665, org.springframework.security.web.csrf.CsrfFilter@196cb5f3, org.springframework.security.web.authentication.logout.LogoutFilter@8ca927d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@78cf013, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@53e06db1, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@32957e93, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3d75b592, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7766826a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ffdff4c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63955171, org.springframework.security.web.session.SessionManagementFilter@1da3bdd2, org.springframework.security.web.access.ExceptionTranslationFilter@2b1c13ce, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@33a0c38b]
+2018/12/21 21:06:47 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:151 - Context refreshed
+2018/12/21 21:06:47 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:154 - Found 1 custom documentation plugin(s)
+2018/12/21 21:06:47 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner:41 - Scanning for api listing references
+2018/12/21 21:06:47 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/21 21:06:47 [restartedMain] INFO  o.s.w.s.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018/12/21 21:06:47 [restartedMain] INFO  o.s.w.s.DispatcherServlet:546 - Completed initialization in 5 ms
+2018/12/21 21:06:47 [restartedMain] INFO  o.e.j.s.AbstractConnector:292 - Started ServerConnector@5c0f17e2{HTTP/1.1,[http/1.1]}{0.0.0.0:6666}
+2018/12/21 21:06:47 [restartedMain] INFO  o.s.b.w.e.j.JettyWebServer:157 - Jetty started on port(s) 6666 (http/1.1) with context path '/space'
+2018/12/21 21:06:47 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:59 - Started MicroSpaceWebApplication in 2.711 seconds (JVM running for 4.385)
+2018/12/21 21:09:13 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:50 - Starting MicroSpaceWebApplication on P-V-10 with PID 5156 (E:\GIT\micro\micro-server\micro-space-web\target\classes started by Administrator in E:\GIT\micro\micro-server\micro-space-web)
+2018/12/21 21:09:13 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:675 - No active profile set, falling back to default profiles: default
+2018/12/21 21:09:13 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/21 21:09:13 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/21 21:09:14 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$549b45b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018/12/21 21:09:14 [restartedMain] INFO  o.e.j.u.log:193 - Logging initialized @2066ms to org.eclipse.jetty.util.log.Slf4jLog
+2018/12/21 21:09:14 [restartedMain] INFO  o.s.b.w.e.j.JettyServletWebServerFactory:143 - Server initialized with port: 6666
+2018/12/21 21:09:14 [restartedMain] INFO  o.e.j.s.Server:371 - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_191-b12
+2018/12/21 21:09:14 [restartedMain] INFO  o.e.j.s.session:365 - DefaultSessionIdManager workerName=node0
+2018/12/21 21:09:14 [restartedMain] INFO  o.e.j.s.session:370 - No SessionScavenger set, using defaults
+2018/12/21 21:09:14 [restartedMain] INFO  o.e.j.s.session:149 - node0 Scavenging every 660000ms
+2018/12/21 21:09:14 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring embedded WebApplicationContext
+2018/12/21 21:09:14 [restartedMain] INFO  o.s.w.c.ContextLoader:296 - Root WebApplicationContext: initialization completed in 1143 ms
+2018/12/21 21:09:14 [restartedMain] INFO  o.e.j.s.h.ContextHandler:850 - Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@59c2329b{application,/space,[file:///C:/Users/Administrator/AppData/Local/Temp/jetty-docbase.4044696737339556313.6666/, jar:file:/D:/software/Maven/repository/io/springfox/springfox-swagger-ui/2.8.0/springfox-swagger-ui-2.8.0.jar!/META-INF/resources],AVAILABLE}
+2018/12/21 21:09:14 [restartedMain] INFO  o.e.j.s.Server:408 - Started @2226ms
+2018/12/21 21:09:14 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.micro.web.common.config.ConfigLoadUtil.env
+2018/12/21 21:09:14 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:43 - Initialized sqliteDataSource
+2018/12/21 21:09:14 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:51 - sqliteDataSource datasource: org.sqlite.javax.SQLiteConnectionPoolDataSource
+2018/12/21 21:09:15 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018/12/21 21:09:15 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/21 21:09:15 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018/12/21 21:09:15 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d469991, org.springframework.security.web.context.SecurityContextPersistenceFilter@54d719a0, org.springframework.security.web.header.HeaderWriterFilter@7c381ef0, org.springframework.security.web.csrf.CsrfFilter@4cc7d4ce, org.springframework.security.web.authentication.logout.LogoutFilter@2b8d9578, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@27733a37, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1a80124b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3951f664, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2cc25d41, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@353aef5d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64be40f0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7329e8be, org.springframework.security.web.session.SessionManagementFilter@5b093e20, org.springframework.security.web.access.ExceptionTranslationFilter@73ed7346, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f36225e]
+2018/12/21 21:09:15 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:151 - Context refreshed
+2018/12/21 21:09:15 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:154 - Found 1 custom documentation plugin(s)
+2018/12/21 21:09:15 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner:41 - Scanning for api listing references
+2018/12/21 21:09:15 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/21 21:09:15 [restartedMain] INFO  o.s.w.s.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018/12/21 21:09:15 [restartedMain] INFO  o.s.w.s.DispatcherServlet:546 - Completed initialization in 0 ms
+2018/12/21 21:09:15 [restartedMain] INFO  o.e.j.s.AbstractConnector:292 - Started ServerConnector@5d035c4f{HTTP/1.1,[http/1.1]}{0.0.0.0:6666}
+2018/12/21 21:09:15 [restartedMain] INFO  o.s.b.w.e.j.JettyWebServer:157 - Jetty started on port(s) 6666 (http/1.1) with context path '/space'
+2018/12/21 21:09:15 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:59 - Started MicroSpaceWebApplication in 2.504 seconds (JVM running for 3.202)
+2018/12/21 21:12:26 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:50 - Starting MicroSpaceWebApplication on P-V-10 with PID 6944 (E:\GIT\micro\micro-server\micro-space-web\target\classes started by Administrator in E:\GIT\micro\micro-server\micro-space-web)
+2018/12/21 21:12:26 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:675 - No active profile set, falling back to default profiles: default
+2018/12/21 21:12:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/21 21:12:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/21 21:12:27 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e16479f9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018/12/21 21:12:27 [restartedMain] INFO  o.e.j.u.log:193 - Logging initialized @1911ms to org.eclipse.jetty.util.log.Slf4jLog
+2018/12/21 21:12:27 [restartedMain] INFO  o.s.b.w.e.j.JettyServletWebServerFactory:143 - Server initialized with port: 6666
+2018/12/21 21:12:27 [restartedMain] INFO  o.e.j.s.Server:371 - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_191-b12
+2018/12/21 21:12:27 [restartedMain] INFO  o.e.j.s.session:365 - DefaultSessionIdManager workerName=node0
+2018/12/21 21:12:27 [restartedMain] INFO  o.e.j.s.session:370 - No SessionScavenger set, using defaults
+2018/12/21 21:12:27 [restartedMain] INFO  o.e.j.s.session:149 - node0 Scavenging every 660000ms
+2018/12/21 21:12:27 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring embedded WebApplicationContext
+2018/12/21 21:12:27 [restartedMain] INFO  o.s.w.c.ContextLoader:296 - Root WebApplicationContext: initialization completed in 1092 ms
+2018/12/21 21:12:27 [restartedMain] INFO  o.e.j.s.h.ContextHandler:850 - Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@7189d050{application,/space,[file:///C:/Users/Administrator/AppData/Local/Temp/jetty-docbase.4127546094884115136.6666/, jar:file:/D:/software/Maven/repository/io/springfox/springfox-swagger-ui/2.8.0/springfox-swagger-ui-2.8.0.jar!/META-INF/resources],AVAILABLE}
+2018/12/21 21:12:27 [restartedMain] INFO  o.e.j.s.Server:408 - Started @2068ms
+2018/12/21 21:12:27 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.micro.web.common.config.ConfigLoadUtil.env
+2018/12/21 21:12:27 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:43 - Initialized sqliteDataSource
+2018/12/21 21:12:27 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:51 - sqliteDataSource datasource: org.sqlite.javax.SQLiteConnectionPoolDataSource
+2018/12/21 21:12:27 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018/12/21 21:12:27 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/21 21:12:27 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018/12/21 21:12:28 [restartedMain] INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:86 - 
+
+Using generated security password: e07a8ecc-6617-4c77-9955-03755f07f424
+
+2018/12/21 21:12:28 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c3091c4, org.springframework.security.web.context.SecurityContextPersistenceFilter@30d551d7, org.springframework.security.web.header.HeaderWriterFilter@1b76357b, org.springframework.security.web.csrf.CsrfFilter@51620dc8, org.springframework.security.web.authentication.logout.LogoutFilter@225a99db, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@efc88a4, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5356a38d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@70d9ab7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6ba3fe9c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@155b6a6a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5345ba8d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17f8206b, org.springframework.security.web.session.SessionManagementFilter@36454437, org.springframework.security.web.access.ExceptionTranslationFilter@1c001177, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@410396bd]
+2018/12/21 21:12:28 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:151 - Context refreshed
+2018/12/21 21:12:28 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:154 - Found 1 custom documentation plugin(s)
+2018/12/21 21:12:28 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner:41 - Scanning for api listing references
+2018/12/21 21:12:28 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/21 21:12:28 [restartedMain] INFO  o.s.w.s.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018/12/21 21:12:28 [restartedMain] INFO  o.s.w.s.DispatcherServlet:546 - Completed initialization in 16 ms
+2018/12/21 21:12:28 [restartedMain] INFO  o.e.j.s.AbstractConnector:292 - Started ServerConnector@505a76a4{HTTP/1.1,[http/1.1]}{0.0.0.0:6666}
+2018/12/21 21:12:28 [restartedMain] INFO  o.s.b.w.e.j.JettyWebServer:157 - Jetty started on port(s) 6666 (http/1.1) with context path '/space'
+2018/12/21 21:12:28 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:59 - Started MicroSpaceWebApplication in 2.389 seconds (JVM running for 3.001)
+2018/12/21 21:14:53 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:50 - Starting MicroSpaceWebApplication on P-V-10 with PID 9696 (E:\GIT\micro\micro-server\micro-space-web\target\classes started by Administrator in E:\GIT\micro\micro-server\micro-space-web)
+2018/12/21 21:14:53 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:675 - No active profile set, falling back to default profiles: default
+2018/12/21 21:14:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/21 21:14:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/21 21:14:54 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d9b13678] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018/12/21 21:14:54 [restartedMain] INFO  o.e.j.u.log:193 - Logging initialized @1951ms to org.eclipse.jetty.util.log.Slf4jLog
+2018/12/21 21:14:54 [restartedMain] INFO  o.s.b.w.e.j.JettyServletWebServerFactory:143 - Server initialized with port: 6666
+2018/12/21 21:14:54 [restartedMain] INFO  o.e.j.s.Server:371 - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_191-b12
+2018/12/21 21:14:54 [restartedMain] INFO  o.e.j.s.session:365 - DefaultSessionIdManager workerName=node0
+2018/12/21 21:14:54 [restartedMain] INFO  o.e.j.s.session:370 - No SessionScavenger set, using defaults
+2018/12/21 21:14:54 [restartedMain] INFO  o.e.j.s.session:149 - node0 Scavenging every 600000ms
+2018/12/21 21:14:54 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring embedded WebApplicationContext
+2018/12/21 21:14:54 [restartedMain] INFO  o.s.w.c.ContextLoader:296 - Root WebApplicationContext: initialization completed in 1078 ms
+2018/12/21 21:14:54 [restartedMain] INFO  o.e.j.s.h.ContextHandler:850 - Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@74a49f3a{application,/space,[file:///C:/Users/Administrator/AppData/Local/Temp/jetty-docbase.8408457757304813013.6666/, jar:file:/D:/software/Maven/repository/io/springfox/springfox-swagger-ui/2.8.0/springfox-swagger-ui-2.8.0.jar!/META-INF/resources],AVAILABLE}
+2018/12/21 21:14:54 [restartedMain] INFO  o.e.j.s.Server:408 - Started @2118ms
+2018/12/21 21:14:54 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.micro.web.common.config.ConfigLoadUtil.env
+2018/12/21 21:14:54 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:43 - Initialized sqliteDataSource
+2018/12/21 21:14:54 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:51 - sqliteDataSource datasource: org.sqlite.javax.SQLiteConnectionPoolDataSource
+2018/12/21 21:14:54 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018/12/21 21:14:55 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/21 21:14:55 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018/12/21 21:14:55 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:151 - Context refreshed
+2018/12/21 21:14:55 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:154 - Found 1 custom documentation plugin(s)
+2018/12/21 21:14:55 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner:41 - Scanning for api listing references
+2018/12/21 21:14:55 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/21 21:14:55 [restartedMain] INFO  o.s.w.s.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018/12/21 21:14:55 [restartedMain] INFO  o.s.w.s.DispatcherServlet:546 - Completed initialization in 0 ms
+2018/12/21 21:14:55 [restartedMain] INFO  o.e.j.s.AbstractConnector:292 - Started ServerConnector@11f1037a{HTTP/1.1,[http/1.1]}{0.0.0.0:6666}
+2018/12/21 21:14:55 [restartedMain] INFO  o.s.b.w.e.j.JettyWebServer:157 - Jetty started on port(s) 6666 (http/1.1) with context path '/space'
+2018/12/21 21:14:55 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:59 - Started MicroSpaceWebApplication in 2.326 seconds (JVM running for 2.959)
+2018/12/21 21:15:36 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:50 - Starting MicroSpaceWebApplication on P-V-10 with PID 4344 (E:\GIT\micro\micro-server\micro-space-web\target\classes started by Administrator in E:\GIT\micro\micro-server\micro-space-web)
+2018/12/21 21:15:36 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:675 - No active profile set, falling back to default profiles: default
+2018/12/21 21:15:36 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/21 21:15:36 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/21 21:15:37 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1527b5e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018/12/21 21:15:37 [restartedMain] INFO  o.e.j.u.log:193 - Logging initialized @1904ms to org.eclipse.jetty.util.log.Slf4jLog
+2018/12/21 21:15:37 [restartedMain] INFO  o.s.b.w.e.j.JettyServletWebServerFactory:143 - Server initialized with port: 6666
+2018/12/21 21:15:37 [restartedMain] INFO  o.e.j.s.Server:371 - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_191-b12
+2018/12/21 21:15:37 [restartedMain] INFO  o.e.j.s.session:365 - DefaultSessionIdManager workerName=node0
+2018/12/21 21:15:37 [restartedMain] INFO  o.e.j.s.session:370 - No SessionScavenger set, using defaults
+2018/12/21 21:15:37 [restartedMain] INFO  o.e.j.s.session:149 - node0 Scavenging every 660000ms
+2018/12/21 21:15:37 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring embedded WebApplicationContext
+2018/12/21 21:15:37 [restartedMain] INFO  o.s.w.c.ContextLoader:296 - Root WebApplicationContext: initialization completed in 1064 ms
+2018/12/21 21:15:37 [restartedMain] INFO  o.e.j.s.h.ContextHandler:850 - Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@784bdf0c{application,/space,[file:///C:/Users/Administrator/AppData/Local/Temp/jetty-docbase.3259859092157236635.6666/, jar:file:/D:/software/Maven/repository/io/springfox/springfox-swagger-ui/2.8.0/springfox-swagger-ui-2.8.0.jar!/META-INF/resources],AVAILABLE}
+2018/12/21 21:15:37 [restartedMain] INFO  o.e.j.s.Server:408 - Started @2054ms
+2018/12/21 21:15:37 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.micro.web.common.config.ConfigLoadUtil.env
+2018/12/21 21:15:37 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:43 - Initialized sqliteDataSource
+2018/12/21 21:15:37 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:51 - sqliteDataSource datasource: org.sqlite.javax.SQLiteConnectionPoolDataSource
+2018/12/21 21:15:38 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018/12/21 21:15:38 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/21 21:15:38 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018/12/21 21:15:38 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:151 - Context refreshed
+2018/12/21 21:15:38 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:154 - Found 1 custom documentation plugin(s)
+2018/12/21 21:15:38 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner:41 - Scanning for api listing references
+2018/12/21 21:15:38 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/21 21:15:38 [restartedMain] INFO  o.s.w.s.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018/12/21 21:15:38 [restartedMain] INFO  o.s.w.s.DispatcherServlet:546 - Completed initialization in 16 ms
+2018/12/21 21:15:38 [restartedMain] INFO  o.e.j.s.AbstractConnector:292 - Started ServerConnector@60c3a8eb{HTTP/1.1,[http/1.1]}{0.0.0.0:6666}
+2018/12/21 21:15:38 [restartedMain] INFO  o.s.b.w.e.j.JettyWebServer:157 - Jetty started on port(s) 6666 (http/1.1) with context path '/space'
+2018/12/21 21:15:38 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:59 - Started MicroSpaceWebApplication in 2.286 seconds (JVM running for 2.894)
+2018/12/21 21:21:09 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:50 - Starting MicroSpaceWebApplication on P-V-10 with PID 5172 (E:\GIT\micro\micro-server\micro-space-web\target\classes started by Administrator in E:\GIT\micro\micro-server\micro-space-web)
+2018/12/21 21:21:09 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:675 - No active profile set, falling back to default profiles: default
+2018/12/21 21:21:09 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/21 21:21:09 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/21 21:21:10 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$91ff9622] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018/12/21 21:21:10 [restartedMain] INFO  o.e.j.u.log:193 - Logging initialized @1946ms to org.eclipse.jetty.util.log.Slf4jLog
+2018/12/21 21:21:10 [restartedMain] INFO  o.s.b.w.e.j.JettyServletWebServerFactory:143 - Server initialized with port: 6666
+2018/12/21 21:21:10 [restartedMain] INFO  o.e.j.s.Server:371 - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_191-b12
+2018/12/21 21:21:11 [restartedMain] INFO  o.e.j.s.session:365 - DefaultSessionIdManager workerName=node0
+2018/12/21 21:21:11 [restartedMain] INFO  o.e.j.s.session:370 - No SessionScavenger set, using defaults
+2018/12/21 21:21:11 [restartedMain] INFO  o.e.j.s.session:149 - node0 Scavenging every 660000ms
+2018/12/21 21:21:11 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring embedded WebApplicationContext
+2018/12/21 21:21:11 [restartedMain] INFO  o.s.w.c.ContextLoader:296 - Root WebApplicationContext: initialization completed in 1063 ms
+2018/12/21 21:21:11 [restartedMain] INFO  o.e.j.s.h.ContextHandler:850 - Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@4aea013{application,/space,[file:///C:/Users/Administrator/AppData/Local/Temp/jetty-docbase.1688902779414813729.6666/, jar:file:/D:/software/Maven/repository/io/springfox/springfox-swagger-ui/2.8.0/springfox-swagger-ui-2.8.0.jar!/META-INF/resources],AVAILABLE}
+2018/12/21 21:21:11 [restartedMain] INFO  o.e.j.s.Server:408 - Started @2092ms
+2018/12/21 21:21:11 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.micro.web.common.config.ConfigLoadUtil.env
+2018/12/21 21:21:11 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:43 - Initialized sqliteDataSource
+2018/12/21 21:21:11 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:51 - sqliteDataSource datasource: org.sqlite.javax.SQLiteConnectionPoolDataSource
+2018/12/21 21:21:11 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018/12/21 21:21:11 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/21 21:21:11 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018/12/21 21:21:11 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping:56 - Adding welcome page: class path resource [webapps/index.html]
+2018/12/21 21:21:11 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:151 - Context refreshed
+2018/12/21 21:21:11 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:154 - Found 1 custom documentation plugin(s)
+2018/12/21 21:21:11 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner:41 - Scanning for api listing references
+2018/12/21 21:21:11 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/21 21:21:11 [restartedMain] INFO  o.s.w.s.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018/12/21 21:21:11 [restartedMain] INFO  o.s.w.s.DispatcherServlet:546 - Completed initialization in 16 ms
+2018/12/21 21:21:11 [restartedMain] INFO  o.e.j.s.AbstractConnector:292 - Started ServerConnector@4019cbf3{HTTP/1.1,[http/1.1]}{0.0.0.0:6666}
+2018/12/21 21:21:11 [restartedMain] INFO  o.s.b.w.e.j.JettyWebServer:157 - Jetty started on port(s) 6666 (http/1.1) with context path '/space'
+2018/12/21 21:21:11 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:59 - Started MicroSpaceWebApplication in 2.281 seconds (JVM running for 2.909)
+2018/12/21 21:23:06 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:50 - Starting MicroSpaceWebApplication on P-V-10 with PID 7524 (E:\GIT\micro\micro-server\micro-space-web\target\classes started by Administrator in E:\GIT\micro\micro-server\micro-space-web)
+2018/12/21 21:23:06 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:675 - No active profile set, falling back to default profiles: default
+2018/12/21 21:23:06 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/21 21:23:06 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/21 21:23:06 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$14ef8ce2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018/12/21 21:23:07 [restartedMain] INFO  o.e.j.u.log:193 - Logging initialized @1877ms to org.eclipse.jetty.util.log.Slf4jLog
+2018/12/21 21:23:07 [restartedMain] INFO  o.s.b.w.e.j.JettyServletWebServerFactory:143 - Server initialized with port: 6666
+2018/12/21 21:23:07 [restartedMain] INFO  o.e.j.s.Server:371 - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_191-b12
+2018/12/21 21:23:07 [restartedMain] INFO  o.e.j.s.session:365 - DefaultSessionIdManager workerName=node0
+2018/12/21 21:23:07 [restartedMain] INFO  o.e.j.s.session:370 - No SessionScavenger set, using defaults
+2018/12/21 21:23:07 [restartedMain] INFO  o.e.j.s.session:149 - node0 Scavenging every 660000ms
+2018/12/21 21:23:07 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring embedded WebApplicationContext
+2018/12/21 21:23:07 [restartedMain] INFO  o.s.w.c.ContextLoader:296 - Root WebApplicationContext: initialization completed in 1078 ms
+2018/12/21 21:23:07 [restartedMain] INFO  o.e.j.s.h.ContextHandler:850 - Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@677bdecc{application,/space,[file:///C:/Users/Administrator/AppData/Local/Temp/jetty-docbase.7518751110825102733.6666/, jar:file:/D:/software/Maven/repository/io/springfox/springfox-swagger-ui/2.8.0/springfox-swagger-ui-2.8.0.jar!/META-INF/resources],AVAILABLE}
+2018/12/21 21:23:07 [restartedMain] INFO  o.e.j.s.Server:408 - Started @2020ms
+2018/12/21 21:23:07 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.micro.web.common.config.ConfigLoadUtil.env
+2018/12/21 21:23:07 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:43 - Initialized sqliteDataSource
+2018/12/21 21:23:07 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:51 - sqliteDataSource datasource: org.sqlite.javax.SQLiteConnectionPoolDataSource
+2018/12/21 21:23:07 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018/12/21 21:23:31 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/21 21:23:31 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018/12/21 21:23:31 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping:56 - Adding welcome page: class path resource [webapps/index.html]
+2018/12/21 21:23:31 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:151 - Context refreshed
+2018/12/21 21:23:31 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:154 - Found 1 custom documentation plugin(s)
+2018/12/21 21:23:31 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner:41 - Scanning for api listing references
+2018/12/21 21:23:31 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/21 21:23:31 [restartedMain] INFO  o.s.w.s.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018/12/21 21:23:31 [restartedMain] INFO  o.s.w.s.DispatcherServlet:546 - Completed initialization in 2 ms
+2018/12/21 21:23:31 [restartedMain] INFO  o.e.j.s.AbstractConnector:292 - Started ServerConnector@53bbca45{HTTP/1.1,[http/1.1]}{0.0.0.0:6666}
+2018/12/21 21:23:31 [restartedMain] INFO  o.s.b.w.e.j.JettyWebServer:157 - Jetty started on port(s) 6666 (http/1.1) with context path '/space'
+2018/12/21 21:23:31 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:59 - Started MicroSpaceWebApplication in 25.809 seconds (JVM running for 26.382)
+2018/12/21 21:27:07 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:50 - Starting MicroSpaceWebApplication on P-V-10 with PID 6396 (E:\GIT\micro\micro-server\micro-space-web\target\classes started by Administrator in E:\GIT\micro\micro-server\micro-space-web)
+2018/12/21 21:27:07 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:675 - No active profile set, falling back to default profiles: default
+2018/12/21 21:27:07 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2018/12/21 21:27:07 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor:227 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2018/12/21 21:27:08 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2f18b4da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018/12/21 21:27:08 [restartedMain] INFO  o.e.j.u.log:193 - Logging initialized @2042ms to org.eclipse.jetty.util.log.Slf4jLog
+2018/12/21 21:27:08 [restartedMain] INFO  o.s.b.w.e.j.JettyServletWebServerFactory:143 - Server initialized with port: 1001
+2018/12/21 21:27:08 [restartedMain] INFO  o.e.j.s.Server:371 - jetty-9.4.12.v20180830; built: 2018-08-30T13:59:14.071Z; git: 27208684755d94a92186989f695db2d7b21ebc51; jvm 1.8.0_191-b12
+2018/12/21 21:27:09 [restartedMain] INFO  o.e.j.s.session:365 - DefaultSessionIdManager workerName=node0
+2018/12/21 21:27:09 [restartedMain] INFO  o.e.j.s.session:370 - No SessionScavenger set, using defaults
+2018/12/21 21:27:09 [restartedMain] INFO  o.e.j.s.session:149 - node0 Scavenging every 660000ms
+2018/12/21 21:27:09 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring embedded WebApplicationContext
+2018/12/21 21:27:09 [restartedMain] INFO  o.s.w.c.ContextLoader:296 - Root WebApplicationContext: initialization completed in 1176 ms
+2018/12/21 21:27:09 [restartedMain] INFO  o.e.j.s.h.ContextHandler:850 - Started o.s.b.w.e.j.JettyEmbeddedWebAppContext@2fc2d167{application,/space,[file:///C:/Users/Administrator/AppData/Local/Temp/jetty-docbase.8770287636892582014.1001/, jar:file:/D:/software/Maven/repository/io/springfox/springfox-swagger-ui/2.8.0/springfox-swagger-ui-2.8.0.jar!/META-INF/resources],AVAILABLE}
+2018/12/21 21:27:09 [restartedMain] INFO  o.e.j.s.Server:408 - Started @2193ms
+2018/12/21 21:27:09 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor:447 - Autowired annotation is not supported on static fields: private static org.springframework.core.env.Environment com.micro.web.common.config.ConfigLoadUtil.env
+2018/12/21 21:27:09 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:43 - Initialized sqliteDataSource
+2018/12/21 21:27:09 [restartedMain] INFO  c.m.w.c.c.DataSourceConfig:51 - sqliteDataSource datasource: org.sqlite.javax.SQLiteConnectionPoolDataSource
+2018/12/21 21:27:09 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018/12/21 21:27:14 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2018/12/21 21:27:14 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2018/12/21 21:27:14 [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping:56 - Adding welcome page: class path resource [webapps/index.html]
+2018/12/21 21:27:15 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:151 - Context refreshed
+2018/12/21 21:27:15 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper:154 - Found 1 custom documentation plugin(s)
+2018/12/21 21:27:15 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner:41 - Scanning for api listing references
+2018/12/21 21:27:15 [restartedMain] INFO  o.e.j.s.h.C.application:2341 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018/12/21 21:27:15 [restartedMain] INFO  o.s.w.s.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2018/12/21 21:27:15 [restartedMain] INFO  o.s.w.s.DispatcherServlet:546 - Completed initialization in 5 ms
+2018/12/21 21:27:15 [restartedMain] INFO  o.e.j.s.AbstractConnector:292 - Started ServerConnector@57c67e5d{HTTP/1.1,[http/1.1]}{0.0.0.0:1001}
+2018/12/21 21:27:15 [restartedMain] INFO  o.s.b.w.e.j.JettyWebServer:157 - Jetty started on port(s) 1001 (http/1.1) with context path '/space'
+2018/12/21 21:27:15 [restartedMain] INFO  c.m.w.MicroSpaceWebApplication:59 - Started MicroSpaceWebApplication in 7.725 seconds (JVM running for 8.363)
