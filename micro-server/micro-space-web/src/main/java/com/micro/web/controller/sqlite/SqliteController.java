@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.micro.web.common.exception.CommonException;
 import com.micro.web.common.json.JsonMapper;
 import com.micro.web.common.utils.RetJsonMsg;
+import com.micro.web.controller.BaseController;
 import com.micro.web.service.sqlite.SqliteService;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -22,11 +23,9 @@ import java.util.Map;
 @Api(tags = "sqlite接口",description = "sqlite Restful API")
 @RequestMapping("/sqlite")
 @Controller
-public class SqliteController {
+public class SqliteController extends BaseController {
 
     private static final Logger logger = LoggerFactory.getLogger(SqliteController.class);
-
-    private static JsonMapper mapper = new JsonMapper(JsonInclude.Include.ALWAYS);
 
     @Autowired
     SqliteService sqliteService ;

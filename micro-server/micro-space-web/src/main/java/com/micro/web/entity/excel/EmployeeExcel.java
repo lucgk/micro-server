@@ -3,7 +3,7 @@ package com.micro.web.entity.excel;
 import com.micro.web.common.config.ConfigLoadUtil;
 import com.micro.web.common.config.excel.AbstractExcel;
 import com.micro.web.common.config.excel.IExcel;
-import com.micro.web.common.constants.SysContants;
+import com.micro.web.common.constants.SysConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -71,14 +71,14 @@ public class EmployeeExcel extends AbstractExcel {
 
     public String getDbName() {
         if(StringUtils.isBlank(dbName)){
-            this.dbName = ConfigLoadUtil.getConfValueBykey(SysContants.EX_DBNAME_1);
+            this.dbName = ConfigLoadUtil.getConfValueBykey(SysConstants.EX_DBNAME_1);
         }
         return dbName;
     }
 
     public void setDbName(String dbName) {
         if(StringUtils.isBlank(dbName)){
-            this.dbName = ConfigLoadUtil.getConfValueBykey(SysContants.EX_DBNAME_1);
+            this.dbName = ConfigLoadUtil.getConfValueBykey(SysConstants.EX_DBNAME_1);
             return;
         }
         this.dbName = dbName;

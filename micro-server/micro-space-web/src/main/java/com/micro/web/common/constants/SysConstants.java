@@ -3,7 +3,7 @@ package com.micro.web.common.constants;
 /**
  * 系统参数
  */
-public interface SysContants {
+public interface SysConstants {
 
 
     /**Excel 文件生成路径*/

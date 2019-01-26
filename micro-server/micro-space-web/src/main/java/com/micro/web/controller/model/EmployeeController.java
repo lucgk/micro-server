@@ -36,7 +36,6 @@ public class EmployeeController extends BaseController {
     @Autowired
     private EmployeeService employeeService;
 
-    private static JsonMapper mapper = new JsonMapper(JsonInclude.Include.ALWAYS);
 
     @ApiOperation(value = "保存职工信息")
     @ApiResponses({

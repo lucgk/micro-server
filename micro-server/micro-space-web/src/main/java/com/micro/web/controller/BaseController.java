@@ -1,6 +1,8 @@
 package com.micro.web.controller;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.micro.web.common.exception.CommonException;
+import com.micro.web.common.json.JsonMapper;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
@@ -11,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 public abstract class BaseController {
+    protected static JsonMapper mapper = new JsonMapper(JsonInclude.Include.ALWAYS);
 
     protected ResponseEntity<InputStreamResource> buildResponseEntity(File file) throws CommonException {
         ResponseEntity<InputStreamResource>  re = null;

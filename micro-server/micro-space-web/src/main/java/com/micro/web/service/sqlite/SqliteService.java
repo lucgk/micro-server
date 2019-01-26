@@ -3,7 +3,7 @@ package com.micro.web.service.sqlite;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.micro.web.common.config.ConfigLoadUtil;
-import com.micro.web.common.constants.SysContants;
+import com.micro.web.common.constants.SysConstants;
 import com.micro.web.common.exception.CommonException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,8 +27,8 @@ public class SqliteService {
      */
     public void initSqlite() throws CommonException {
         try{
-            String sqliteUrl = ConfigLoadUtil.getConfValueBykey(SysContants.SQLITE_KEY_INITURL);
-            String sqliteDriver = ConfigLoadUtil.getConfValueBykey(SysContants.SQLITE_KEY_DRIVER);
+            String sqliteUrl = ConfigLoadUtil.getConfValueBykey(SysConstants.SQLITE_KEY_INITURL);
+            String sqliteDriver = ConfigLoadUtil.getConfValueBykey(SysConstants.SQLITE_KEY_DRIVER);
             sqliteDataSource.execute("create table Test ( id  long(11) PRIMARY key ,coldesc varchar(32))");
         }catch (Exception e){
             throw new CommonException("初始化数据库异常！"+e.getMessage(),e);

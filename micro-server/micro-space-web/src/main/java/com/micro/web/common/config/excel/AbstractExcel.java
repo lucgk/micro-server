@@ -1,6 +1,6 @@
 package com.micro.web.common.config.excel;
 
-import com.micro.web.common.constants.SysContants;
+import com.micro.web.common.constants.SysConstants;
 import com.micro.web.common.exception.CommonException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -186,14 +186,14 @@ public abstract class AbstractExcel implements IExcel{
          * @throws CommonException
          */
         public File buildExcelFile(Workbook workbook,Sheet sheet,String fileName) throws CommonException {
-            File dir = new File(SysContants.PROJECT_TEMP_DIR);
+            File dir = new File(SysConstants.PROJECT_TEMP_DIR);
             File file = null;
             FileOutputStream fos = null;
             try {
                 if(!dir.exists()||!dir.isDirectory()){
                     FileUtils.forceMkdir(dir);
                 }
-                file = new File(SysContants.PROJECT_TEMP_DIR+File.separator+fileName);
+                file = new File(SysConstants.PROJECT_TEMP_DIR+File.separator+fileName);
                 fos = new FileOutputStream(file);
                 workbook.write(fos);
                 fos.flush();

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.web.dao.personal.UserInfoDao">
+
+	<sql id="allColWithoutId">
+	     `name`,`birthday`,`gender`,`phone` weChat,`tim` ,`remarks`,`create_time` createTime,`update_time` updateTime
+	</sql>
+	<sql id="allColumns">
+		id, <include refid="allColWithoutId" />
+	</sql>
+
+	<insert id="insertUserInfo" parameterType="UserInfo" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+		userInfo(`name`,`birthday`,`gender`,`phone`,`weChat`,`tim` ,`remarks`,`create_time`,`update_time`)
+		VALUES (#{name},#{birthday}, #{gender},#{phone},#{weChat},#{tim},#{remarks},datetime('now'),datetime('now'))
+	</insert>
+	
+
+	<update id="updateUserInfoById" parameterType="UserInfo">
+		UPDATE userInfo
+		SET
+				`name`=#{name},
+				`birthday`=#{birthday},
+				`gender`=#{gender},
+		        `phone`=#{phone},
+		        `weChat`=#{weChat},
+		        `tim`=#{tim},
+		        `remarks`=#{remarks},
+				 updateTime=datetime('now')
+		WHERE id=#{id}
+	</update>
+	
+	<delete id="deleteUserInfoById" parameterType="UserInfo">
+		DELETE FROM userInfo WHERE id=#{id}
+	</delete>
+
+	<sql id="queryWhere">
+		FROM userInfo
+		<where>
+			<!--<if test="search != null and search != ''">
+				AND (`name` LIKE  CONCAT(CONCAT('%', #{search}), '%') or `address` LIKE CONCAT(CONCAT('%', #{search}), '%'))
+			</if>-->
+			<if test="name != null and name != ''">
+				AND name = #{name}
+			</if>
+		</where>
+	</sql>
+
+
+	<sql id="queryOrderPage">
+		<if test="orderBy != null and orderBy != ''">
+			ORDER BY ${orderBy}
+			<if test="order != null and order != ''">
+				${order}
+			</if>
+		</if>
+		<if test="size != null and size != 0">
+			LIMIT #{start}, #{size}
+		</if>
+	</sql>
+	
+	<select id="pageQuery" parameterType="UserInfoQuery" resultType="UserInfo">
+		SELECT <include refid="allColumns"></include>
+		<include refid="queryWhere"></include>
+		<include refid="queryOrderPage"></include>
+	</select>
+	
+	<select id="queryTotalCount" parameterType="UserInfoQuery" resultType="long">
+		SELECT COUNT(1)
+		<include refid="queryWhere"></include>
+	</select>
+
+	<select id="queryUserInfoById" parameterType="UserInfo"  resultType="UserInfo">
+		SELECT <include refid="allColumns"/>
+		FROM userInfo
+		where id = #{id}
+	</select>
+</mapper>
