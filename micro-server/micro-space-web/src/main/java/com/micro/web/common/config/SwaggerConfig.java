@@ -34,7 +34,7 @@ public class SwaggerConfig {
         		.title("springboot framwork 1.0")
                 .description("project : micro space 1.0 Restful 接口说明.")
 				.termsOfServiceUrl("www.baidu.com")
-				.contact(new Contact("csdn大师兄", "www.baidu.com", "cmshome@163.com"))
+				.contact(new Contact("TTTTT", "www.baidu.com", "cmshome@163.com"))
 				.license("")
 				.licenseUrl("")
                 .version("1.0")

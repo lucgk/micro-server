@@ -1,0 +1,6 @@
+*.key ，*.pem 为下载的服务商证书
+SSL证书，导入到keystore里，供Spring Boot使用
+keytool -import -alias jetty -file 1778477_www.lhspace.info.pem -keystore micro.p12 -storepass micro_lhspace
+
+
+测试尚未通过

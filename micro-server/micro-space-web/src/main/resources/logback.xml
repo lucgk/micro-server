@@ -10,7 +10,7 @@
     </appender>
 
     <appender name="businessLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/scaff.log</file>
+        <file>logs/microd.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>logs/micro-%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
             <maxHistory>3</maxHistory>

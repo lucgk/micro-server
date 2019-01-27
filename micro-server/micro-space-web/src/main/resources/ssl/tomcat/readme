@@ -1,0 +1,3 @@
+*.key ，*.pem 为下载的服务商证书（对应tomcat 服务器）
+注意事项：
+    注意pom.xml 引入容器必须为tomcate
