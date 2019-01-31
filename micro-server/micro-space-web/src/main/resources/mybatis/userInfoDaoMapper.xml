@@ -3,7 +3,7 @@
 <mapper namespace="com.micro.web.dao.personal.UserInfoDao">
 
 	<sql id="allColWithoutId">
-	     `name`,`birthday`,`gender`,`phone` weChat,`tim` ,`remarks`,`create_time` createTime,`update_time` updateTime
+	    `openId`, `name`,`birthday`,`gender`,`phone` weChat,`tim` ,`remarks`,`create_time` createTime,`update_time` updateTime
 	</sql>
 	<sql id="allColumns">
 		id, <include refid="allColWithoutId" />
@@ -11,12 +11,27 @@
 
 	<insert id="insertUserInfo" parameterType="UserInfo" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO
-		userInfo(`name`,`birthday`,`gender`,`phone`,`weChat`,`tim` ,`remarks`,`create_time`,`update_time`)
-		VALUES (#{name},#{birthday}, #{gender},#{phone},#{weChat},#{tim},#{remarks},datetime('now'),datetime('now'))
+		userInfo(`openId`,`name`,`birthday`,`gender`,`phone`,`weChat`,`tim` ,`remarks`,`create_time`,`update_time`)
+		VALUES (#{openId},#{name},#{birthday}, #{gender},#{phone},#{weChat},#{tim},#{remarks},datetime('now'),datetime('now'))
 	</insert>
 	
 
 	<update id="updateUserInfoById" parameterType="UserInfo">
+		UPDATE userInfo
+		SET
+				`openId`=#{openId},
+				`name`=#{name},
+				`birthday`=#{birthday},
+				`gender`=#{gender},
+		        `phone`=#{phone},
+		        `weChat`=#{weChat},
+		        `tim`=#{tim},
+		        `remarks`=#{remarks},
+				 update_time=datetime('now')
+		WHERE id=#{id}
+	</update>
+
+	<update id="updateUserInfoByOpenId" parameterType="UserInfo">
 		UPDATE userInfo
 		SET
 				`name`=#{name},
@@ -26,10 +41,10 @@
 		        `weChat`=#{weChat},
 		        `tim`=#{tim},
 		        `remarks`=#{remarks},
-				 updateTime=datetime('now')
-		WHERE id=#{id}
+				 update_time=datetime('now')
+		WHERE `openId`=#{openId}
 	</update>
-	
+
 	<delete id="deleteUserInfoById" parameterType="UserInfo">
 		DELETE FROM userInfo WHERE id=#{id}
 	</delete>
@@ -74,5 +89,11 @@
 		SELECT <include refid="allColumns"/>
 		FROM userInfo
 		where id = #{id}
+	</select>
+
+	<select id="queryUserInfoByOpenId" parameterType="UserInfo"  resultType="UserInfo">
+		SELECT <include refid="allColumns"/>
+		FROM userInfo
+		where `openId` = #{openId}
 	</select>
 </mapper>

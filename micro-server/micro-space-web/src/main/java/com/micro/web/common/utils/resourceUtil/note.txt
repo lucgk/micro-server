@@ -1,0 +1,93 @@
+Resource 接口本身没有提供访问任何底层资源的实现逻辑，针对不同的底层资源，Spring 将会提供不同的 Resource 实现类，不同的实现类负责不同的资源访问逻辑。
+Resource实现类
+
+ * @see WritableResource
+ * @see ContextResource
+ * @see UrlResource
+ * @see ClassPathResource
+ * @see FileSystemResource
+ * @see PathResource
+ * @see ByteArrayResource
+ * @see InputStreamResource
+selfsearch中punish有到了策略模式
+Spring 框架的 Context 如何“智能”地选择资源访问策略
+
+WritableResource:可写资源接口，是Spring3.1版本新增的接口，有两个实现类FileSystemResource和PathResource，其中PathResource是Spring4.0提供的实现类。
+ByteArrayResource:二进制数组表示的资源，二进制数组资源可以在内存中通过程序构造。
+ClassPathResource:类路径下的资源，资源以相对路径的方式表示。
+FileSystemResource:文件系统资源，资源一文件系统的路径表示，如D:/aaa/vvv.java
+InputStreamResource：以输入流表示返回的资源。
+ServletContextResource:问访问Web容器上下文中的资源而设计的类，负责对于Web应用根目录的路径加载资源。它支持以流和URL的方式访问，在WAR解包的情况下，也可以通过File方式访问。该类还可以直接从JAR包中访问资源。
+UrlResource:URL封装了java.net.URL，它使用户能够访问任任何可以通过URL表示的资源，如文件系统的资源、HTTP资源、FTP资源等。
+PathResource:Spring4.0提供的读取资源文件的新类。Path封装了java.net.URL、java.nio.Path、文件系统资源，它使用户能够访问任何可以通过URL、Path、系统文件路径表示的资源，如文件系统的资源，HTTP资源、FTP资源等。
+和JDK提供的File类访问资源比起来，Spring的Resource实现类提供了更加便捷的访问方式，用户可以根据实际的情况选择合适的Resource访问资源。
+
+资源加载
+
+Spring提供了一个强大的加载资源的方式，不仅能通过“classpath:”、“file:”等资源地址前缀识别不同的资源类型，还支持Ant风格带通配符的资源地址。
+
+资源地址表达式
+Spring支持的资源类型的地址前缀
+地址前缀                            实例                                  释义
+classpath:              classpath:com/xgj/beans.xml             从类不经中加载资源，classpath: 和 classpath:/ 是等价的，
+                                                                都是相对于类的根路径，资源文件可以在标准的文件系统中，
+                                                                也可以在jar或者zip的类包中
+
+file:                   file:/conf/com/xgj/beans.xml            使用UrlResource从文件系统目录中装载资源，可以采用绝对路径或者相对路径
+
+http://                 http://www.xgj.com/resource/beans.xml   使用UrlResource从web服务器中加载资源
+
+ftp://                  ftp://www.xgj.com/resource/beans.xml    使用UrlResource从FTP服务器中装载资源
+
+没有前缀                com/xgj/beans.xml                       根据ApplicationContext的具体实现类采用对应类型的Resource
+
+注意事项  classpath: 和  classpath*:
+举个例子： 假设有多个Jar包或者文件系统类路径下拥有一个相同包名（com.xgj）
+classpath:  只会加载第一个加载的com.xgj包的类路径下查找
+classpath*: 会扫描到所有的这些jar包及类路径下出下的com.xgj类路径。
+
+使用场景：
+一般情况下，我们的应用都是有各个模块组成的，对于分模块打包的应用，假设我们有一个应用，分为N个模块，一个模块对应一个配置文件，
+分别为module1.xml 、module2xml、module3.xml….等，都放在了com.xgj的目录下，每个模块单独打成jar包。
+我们可以使用 classpath*:com/xgj/module*.xml加载所有模块的配置文件。
+如果使用classpath:com/xgj/module*.xml 只会加载一个模块的配置文件
+
+Ant风格的资源地址
+Ant风格的资源地址支持三种匹配符
+?  匹配文件名中的一个字符
+*   匹配文件名中的任意字符
+** 匹配多层路径
+示例：
+classpath:com/t?st.xml 1
+匹配com类路径下的 com/test.xml  com/tast.xml等
+file:D:/conf/*.xml1
+匹配文件系统D:/conf/目录下所有以.xml为后缀的文件
+classpath:com/**/test.xml1
+匹配com类路径下（当前目录及子孙目录）的test.xml
+classpath:org/springframework/**/*.xml1
+匹配类路径org/springframework/下是有的以.xml为后缀的文件
+classpath:org/**/servlet/bla.xml 1
+匹配类路径org任意层级的 /servlet/bla.xml的文件
+
+
+资源加载器
+Spring定义了一套资源加载的接口，并提供了实现类
+ResourceLoader
+ResourceLoader中的方法Resource getResource(String location);
+可以根据一个资源地址加载文件资源， 不过ResourceLoader这个接口方法中的资源地址仅支持带资源类型前缀的表达式，不支持Ant风格的资源路径表达式
+
+ResourcePatternResolver
+ResourcePatternResolver 扩展了 ResourceLoader接口
+ResourcePatternResolver 的getResource方法支持带资源类型前缀以及Ant风格的资源路径表达式。
+PathMatchingResourcePatternResolver 是Spring提供的标准实现类。
+
+注意事项
+
+使用Resource操作文件时，如果资源的配置文件在项目发布的时候会打包到jar中，那么就不能使用Resource.getFile()方法，否则会抛出FileNotFoundException异常。
+
+推荐使用 Resource.getInputStream()读取。
+错误的方式
+(new DefaultResourceLoader()).getResource("classpath:conf/sys.properties").getFile();1
+正确的方式
+(new DefaultResourceLoader()).getResource("classpath:conf/sys.properties").getInputStream();1
+建议尽量使用流的方式读取，避免环境不同造成问题

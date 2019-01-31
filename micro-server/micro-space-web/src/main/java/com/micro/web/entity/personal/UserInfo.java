@@ -2,14 +2,27 @@ package com.micro.web.entity.personal;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.micro.web.entity.common.IdEntity;
+import com.micro.web.common.json.AppletEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.Date;
 
 @ApiModel(description = "用户信息",value = "UserInfo")
-public class UserInfo extends IdEntity {
+public class UserInfo implements   AppletEntity {
+
+    @ApiModelProperty(value = "ID")
+    protected  long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @ApiModelProperty(value = "小程序用户唯一标识",notes = "小程序用户唯一标识",hidden = true)
+    private String openId;
 
     @ApiModelProperty(value = "姓名",notes = "姓名全拼",required = true)
     private String name;
@@ -115,5 +128,13 @@ public class UserInfo extends IdEntity {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 }

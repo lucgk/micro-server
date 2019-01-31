@@ -1,6 +1,5 @@
 package com.micro.web.dao.personal;
 
-import com.micro.web.common.utils.QueryByPage;
 import com.micro.web.entity.personal.UserInfo;
 import com.micro.web.entity.personal.UserInfoQuery;
 
@@ -21,6 +20,12 @@ public interface UserInfoDao {
     void updateUserInfoById(UserInfo userInfo);
 
     /**
+     * 修改
+     * @param userInfo
+     */
+    void updateUserInfoByOpenId(UserInfo userInfo);
+
+    /**
      * 分页获取用户信息
      * @param queryByPage
      * @return
@@ -35,4 +40,11 @@ public interface UserInfoDao {
      * @return
      */
     UserInfo queryUserInfoById(UserInfo userInfo);
+
+    /**
+     * 微信请求code
+     * @param userInfo
+     * @return
+     */
+    UserInfo queryUserInfoByOpenId(UserInfo userInfo);
 }
