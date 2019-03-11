@@ -77,4 +77,13 @@ public class FactoryImage implements   AppletEntity {
     public void setIsCore(String isCore) {
         this.isCore = isCore;
     }
+
+    public FactoryImage(String factoryId, String imagePath, String isCore) {
+        this.factoryId = factoryId;
+        this.imagePath = imagePath;
+        this.isCore = isCore;
+    }
+
+    public FactoryImage() {
+    }
 }

@@ -16,6 +16,12 @@
 		VALUES (#{openId},#{factoryName}, #{factorySize},#{factoryDesc},#{phone},#{remarks},datetime('now'),datetime('now'))
 	</insert>
 	
+	<insert id="insertImageInfo" parameterType="FactoryImage" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+		factoryImage(factoryId,imagePath,isCore,createTime,updateTime)
+		VALUES (#{factoryId},#{imagePath}, #{isCore},datetime('now'),datetime('now'))
+	</insert>
+
 
 	<update id="updateFactoryInfo" parameterType="FactoryInfo">
 		UPDATE
@@ -33,6 +39,11 @@
 	<delete id="deleteFactoryInfoById" parameterType="Integer">
 		DELETE FROM
 		factoryInfo WHERE id=#{id}
+	</delete>
+
+	<delete id="deleteImageInfoById" parameterType="Integer">
+		DELETE FROM
+		factoryImage WHERE id=#{id}
 	</delete>
 
 	<sql id="queryWhere">

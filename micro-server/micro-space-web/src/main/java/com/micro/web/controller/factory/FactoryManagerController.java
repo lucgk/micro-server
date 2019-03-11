@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -78,7 +79,7 @@ public class FactoryManagerController extends BaseController {
     @RequestMapping(value = "/queryAllFactoryInfo",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public RetJsonMsg queryAllFactoryInfo(){
-        logger.info("FactoryManagerController deleteFactoryInfo start............................");
+        logger.info("FactoryManagerController queryAllFactoryInfo start............................");
         RetJsonMsg retJson = new RetJsonMsg();
         try {
             List<FactoryInfo> facts = factoryManagerService.queryAllFactoryInfo();
@@ -89,7 +90,74 @@ public class FactoryManagerController extends BaseController {
             retJson.setMsg(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION+e.getMessage());
             logger.error(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION, e);
         }
-        logger.info("FactoryManagerController deleteFactoryInfo end............................");
+        logger.info("FactoryManagerController queryAllFactoryInfo end............................");
         return retJson;
     }
+
+    @ApiOperation(value = "图片信息上传",notes = "图片信息上传 - /factorymanager/uploadImage" ,response = String.class)
+    @ApiResponses({
+            @ApiResponse(code = 200 ,message = "成功返回公共接口类",response = RetJsonMsg.class)
+    })
+    @RequestMapping(value = "/uploadImage",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public RetJsonMsg uploadImage(@RequestParam(value = "image" ,required = true)MultipartFile image,String factoryId,String isCore){
+        logger.info("FactoryManagerController uploadImage start............................");
+        RetJsonMsg retJson = new RetJsonMsg();
+        try {
+            factoryManagerService.uploadImage(image,factoryId,isCore);
+            retJson.setMsg(NoticeMsgConstants.COMMON_RESULTMSG_SUCCESS);
+        } catch (Exception e) {
+            retJson.setFail();
+            retJson.setMsg(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION+e.getMessage());
+            logger.error(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION, e);
+        }
+        logger.info("FactoryManagerController uploadImage end............................");
+        return retJson;
+    }
+
+    @ApiOperation(value = "图片信息批量上传",notes = "图片信息批量上传 - /factorymanager/batchUploadImages" ,response = String.class)
+    @ApiResponses({
+            @ApiResponse(code = 200 ,message = "成功返回公共接口类",response = RetJsonMsg.class)
+    })
+    @RequestMapping(value = "/batchUploadImages",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public RetJsonMsg batchUploadImages(@RequestParam(value = "images" ,required = true)MultipartFile[] images,String factoryId){
+        logger.info("FactoryManagerController batchUploadImages start............................");
+        RetJsonMsg retJson = new RetJsonMsg();
+        try {
+            factoryManagerService.batchUploadImages(images,factoryId);
+            retJson.setMsg(NoticeMsgConstants.COMMON_RESULTMSG_SUCCESS);
+        } catch (Exception e) {
+            retJson.setFail();
+            retJson.setMsg(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION+e.getMessage());
+            logger.error(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION, e);
+        }
+        logger.info("FactoryManagerController batchUploadImages end............................");
+        return retJson;
+    }
+
+    @ApiOperation(value = "删除图片信息",notes = "删除图片信息 - /factorymanager/deleteImageInfoById" ,response = String.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(name="id", value="图片关联ID", required=true, paramType="query", dataType="int")
+    })
+    @ApiResponses({
+            @ApiResponse(code = 200 ,message = "成功返回公共接口类",response = RetJsonMsg.class)
+    })
+    @RequestMapping(value = "/deleteImageInfoById",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public RetJsonMsg deleteImageInfoById(@RequestParam(value = "id" ,required = true) int id){
+        logger.info("FactoryManagerController deleteImageInfoById start............................");
+        RetJsonMsg retJson = new RetJsonMsg();
+        try {
+            factoryManagerService.deleteImageInfoById(id);
+            retJson.setMsg(NoticeMsgConstants.COMMON_RESULTMSG_SUCCESS);
+        } catch (Exception e) {
+            retJson.setFail();
+            retJson.setMsg(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION+e.getMessage());
+            logger.error(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION, e);
+        }
+        logger.info("FactoryManagerController deleteImageInfoById end............................");
+        return retJson;
+    }
+
 }
