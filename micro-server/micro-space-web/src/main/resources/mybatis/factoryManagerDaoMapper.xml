@@ -84,4 +84,18 @@
 		SELECT <include refid="allColumns"></include>
 		<include refid="queryWhere"></include>
 	</select>
+
+	<select id="queryFactoryImages" parameterType="FactoryImage"  resultType="FactoryImage">
+		SELECT id, factoryId,imagePath,isCore,createTime,updateTime
+		FROM
+		factoryImage
+		<where>
+			<if test="isCore != null and isCore != ''">
+				AND isCore = #{isCore}
+			</if>
+			<if test="factoryId != null and factoryId != ''">
+				AND factoryId = #{factoryId}
+			</if>
+		</where>
+	</select>
 </mapper>

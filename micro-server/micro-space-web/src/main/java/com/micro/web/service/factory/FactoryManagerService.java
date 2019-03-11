@@ -5,6 +5,7 @@ import com.micro.web.dao.factory.FactoryManagerDao;
 import com.micro.web.entity.factory.FactoryImage;
 import com.micro.web.entity.factory.FactoryInfo;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ import java.util.List;
 public class FactoryManagerService {
 
     @Autowired
-    FactoryManagerDao factoryManagerDao ;
+    private FactoryManagerDao factoryManagerDao ;
 
     @Value("${applet.upload.base.dir}")
     private String uploadPath;
@@ -55,5 +56,15 @@ public class FactoryManagerService {
 
     public void deleteImageInfoById(int id) {
         factoryManagerDao.deleteImageInfoById(id);
+    }
+
+
+    public List<FactoryImage> queryFactoryImages(String factoryId, String isCore) {
+        FactoryImage para = new FactoryImage();
+        para.setFactoryId(factoryId+"");
+        if(StringUtils.isNotBlank(isCore)){
+            para.setIsCore(isCore);
+        }
+        return  factoryManagerDao.queryFactoryImages(para);
     }
 }

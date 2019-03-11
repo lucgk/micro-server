@@ -3,6 +3,7 @@ package com.micro.web.controller.factory;
 import com.micro.web.common.constants.NoticeMsgConstants;
 import com.micro.web.common.utils.RetJsonMsg;
 import com.micro.web.controller.BaseController;
+import com.micro.web.entity.factory.FactoryImage;
 import com.micro.web.entity.factory.FactoryInfo;
 import com.micro.web.entity.personal.UserInfo;
 import com.micro.web.service.factory.FactoryManagerService;
@@ -157,6 +158,32 @@ public class FactoryManagerController extends BaseController {
             logger.error(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION, e);
         }
         logger.info("FactoryManagerController deleteImageInfoById end............................");
+        return retJson;
+    }
+
+    @ApiOperation(value = "查询厂房图片信息",notes = "查询厂房图片信息 - /factorymanager/queryFactoryImages" ,response = String.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(name="factoryId", value="厂房ID", required=true, paramType="query", dataType="String"),
+            @ApiImplicitParam(name="isCore", value="isCore",  paramType="query", dataType="String")
+    })
+    @ApiResponses({
+            @ApiResponse(code = 200 ,message = "成功返回公共接口类",response = RetJsonMsg.class)
+    })
+    @RequestMapping(value = "/queryFactoryImages",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public RetJsonMsg queryFactoryImages(@RequestParam(value = "factoryId" ,required = true) String factoryId,@RequestParam(value = "isCore" ,required = false) String isCore){
+        logger.info("FactoryManagerController queryAllFactoryInfo start............................");
+        RetJsonMsg retJson = new RetJsonMsg();
+        try {
+            List<FactoryImage> facts = factoryManagerService.queryFactoryImages(factoryId,isCore);
+            retJson.setData(facts);
+            retJson.setMsg(NoticeMsgConstants.COMMON_RESULTMSG_SUCCESS);
+        } catch (Exception e) {
+            retJson.setFail();
+            retJson.setMsg(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION+e.getMessage());
+            logger.error(NoticeMsgConstants.COMMON_RESULTMSG_EXCEPTION, e);
+        }
+        logger.info("FactoryManagerController queryFactoryImages end............................");
         return retJson;
     }
 

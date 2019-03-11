@@ -17,4 +17,6 @@ public interface FactoryManagerDao extends MyBatisCrudRepository {
     void insertImageInfo(FactoryImage factoryImage);
 
     void deleteImageInfoById(int id);
+
+    List<FactoryImage> queryFactoryImages(FactoryImage para);
 }
