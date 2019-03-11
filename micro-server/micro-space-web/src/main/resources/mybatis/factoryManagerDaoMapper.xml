@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micro.web.dao.factory.FactoryManagerDao">
+
+	<sql id="allColWithoutId">
+		`openId`,`factoryName`,`factorySize`,`factoryDesc`,`phone` ,remarks,`createTime` ,`updateTime`
+	</sql>
+
+	<sql id="allColumns">
+		id, <include refid="allColWithoutId" />
+	</sql>
+
+	<insert id="insertFactoryInfo" parameterType="FactoryInfo" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO
+		factoryInfo(<include refid="allColWithoutId" />)
+		VALUES (#{openId},#{factoryName}, #{factorySize},#{factoryDesc},#{phone},#{remarks},datetime('now'),datetime('now'))
+	</insert>
+	
+
+	<update id="updateFactoryInfo" parameterType="FactoryInfo">
+		UPDATE
+			factoryInfo SET
+				`openId`=#{openId},
+				`factoryName`=#{factoryName},
+				`factorySize`=#{factorySize},
+		        `factoryDesc`=#{factoryDesc},
+		        `phone`=#{phone},
+		        `remarks`=#{remarks},
+				 updateTime=datetime('now')
+		WHERE id=#{id}
+	</update>
+	
+	<delete id="deleteFactoryInfoById" parameterType="Integer">
+		DELETE FROM
+		factoryInfo WHERE id=#{id}
+	</delete>
+
+	<sql id="queryWhere">
+		FROM
+		factoryInfo
+		<where>
+			<if test="factoryName != null and factoryName != ''">
+				AND factoryName = #{factoryName}
+			</if>
+		</where>
+	</sql>
+
+
+	<sql id="queryOrderPage">
+		<if test="orderBy != null and orderBy != ''">
+			ORDER BY ${orderBy}
+			<if test="order != null and order != ''">
+				${order}
+			</if>
+		</if>
+		<if test="size != null and size != 0">
+			LIMIT #{start}, #{size}
+		</if>
+	</sql>
+	
+	<select id="queryByPage" parameterType="FactoryInfo" resultType="FactoryInfo">
+		SELECT <include refid="allColumns"></include>
+		<include refid="queryWhere"></include>
+		<include refid="queryOrderPage"></include>
+	</select>
+
+	<select id="queryTotalCount" parameterType="FactoryInfo" resultType="long">
+		SELECT COUNT(1)
+		<include refid="queryWhere"></include>
+	</select>
+
+	<select id="queryAllFactoryInfo"   resultType="FactoryInfo">
+		SELECT <include refid="allColumns"></include>
+		<include refid="queryWhere"></include>
+	</select>
+</mapper>
