@@ -81,8 +81,8 @@
 	</select>
 
 	<select id="queryAllFactoryInfo"   resultType="FactoryInfo">
-		SELECT <include refid="allColumns"></include>
-		<include refid="queryWhere"></include>
+		SELECT a.id,a.`openId`,a.`factoryName`,a.`factorySize`,a.`factoryDesc`,a.`phone` ,a.remarks,a.`createTime` ,a.`updateTime` ,b.imagePath
+		FROM factoryInfo a left join  factoryImage b on a.id = b.factoryId
 	</select>
 
 	<select id="queryFactoryImages" parameterType="FactoryImage"  resultType="FactoryImage">

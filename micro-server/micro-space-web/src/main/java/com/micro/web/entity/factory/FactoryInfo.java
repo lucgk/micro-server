@@ -31,6 +31,9 @@ public class FactoryInfo implements   AppletEntity {
     @ApiModelProperty(value = "备注",notes = "备注")
     private String remarks;
 
+    @ApiModelProperty(value = "Image",notes = "Image")
+    private String imagePath;
+
 
     @ApiModelProperty(value = "更新时间",notes = "更新时间",hidden = true)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+08:00")
@@ -39,6 +42,15 @@ public class FactoryInfo implements   AppletEntity {
     @ApiModelProperty(value = "创建时间",notes = "创建时间",hidden = true)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+08:00")
     private String createTime;
+
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 
     public long getId() {
         return id;

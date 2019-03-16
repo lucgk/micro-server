@@ -23,6 +23,8 @@ public class FactoryManagerService {
 
     @Value("${applet.upload.base.dir}")
     private String uploadPath;
+    @Value("${applet.server.image}")
+    private String imageServer;
 
     public void saveFactoryInfo(FactoryInfo factoryInfo) {
         if(factoryInfo.getId()>0){
@@ -37,13 +39,20 @@ public class FactoryManagerService {
     }
 
     public List<FactoryInfo> queryAllFactoryInfo() {
-        return factoryManagerDao.queryAllFactoryInfo();
+        List<FactoryInfo> factoryInfos = factoryManagerDao.queryAllFactoryInfo();
+        for(FactoryInfo factoryInfo:factoryInfos){
+            if(StringUtils.isNotBlank(factoryInfo.getImagePath())){
+                factoryInfo.setImagePath(imageServer+factoryInfo.getImagePath());
+            }
+        }
+        return factoryInfos;
     }
 
     public void uploadImage(MultipartFile image, String factoryId, String isCore) throws IOException {
-        File file = new File(uploadPath+File.separator+"image"+File.separator+LocalDateUtil.getLocalDate() +File.separator+image.getOriginalFilename());
+        String filePath = "image"+File.separator+LocalDateUtil.getLocalDate() +File.separator+image.getOriginalFilename();
+        File file = new File(uploadPath+File.separator+filePath);
         FileUtils.copyInputStreamToFile(image.getInputStream(),file);
-        FactoryImage factoryImage = new FactoryImage(factoryId,file.getAbsolutePath(),isCore);
+        FactoryImage factoryImage = new FactoryImage(factoryId,filePath,isCore);
         factoryManagerDao.insertImageInfo(factoryImage);
     }
 
