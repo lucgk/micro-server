@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>micro</groupId>
+  <artifactId>micro-server</artifactId>
+  <version>1.0.0.SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+  <name>micro-server</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	  <project.release.version>1.0.0</project.release.version>
+	  <maven.deploy.skip>true</maven.deploy.skip>
+	  <repository.id>${project.distributionManagement.snapshotRepository.id}</repository.id>
+	  <repository.id>${project.distributionManagement.snapshotRepository.url}</repository.id>
+  </properties>
+
+
+
+
+  <dependencies>
+  </dependencies>
+  
+	<!-- 管理构件的发布  （这是一个环境变量）
+		<downloadUrl> URL </downloadUrl> 其它的Maven项目可以通过该URL下载并引用当前Maven项目的构件.
+		<status> 当前Maven项目的状态.可用的状态有以下几种.并且这个值不是人为设置的.而是Maven自动设置的  none : 未指明状态，默认值 converted : 该Maven项目的构件已经被转换为兼容Maven 2  partner : 该Maven项目的构件保持与另一个库的Maven版本一致  deployed : 该Maven项目的构件是通过Maven 2或Maven 3发布的，最常用的值  verified : 该Maven项目的构件已经被验证过
+		<distributionManagement>中的<repository>
+			<uniqueVersion>指定是否产生一个唯一性的version number还是使用address里的其中version部分.(true or false)
+			<id>  库的id
+			<name> 库的名称
+			<url> 库的url
+			<layout> default或者legacy
+		maven仓库分为两种 release发布仓库(<repository>) 和 snapshot快照仓库(<snapshotsrepository>)
+			snapshot快照仓库用于保存开发过程中的不稳定版本 release正式仓库用来保存稳定的发行版本
+			定义一个组件/模块为快照版本  只需要在pom文件中的该模板的版本号后面加上 -SNAPSHOT就可以了.  注意:必须是大写
+			maven会根据模块的版本号(pom文件中的<version>版本号</version>)中是否带有-SNAPSHOT来判断这个是快照版本还是正式版本.
+			如果是快照版本:
+			在mvn deploy时会自动发布到快照版本库中.
+			而使用快照版本的模块,在不更改版本号的情况下,直接编译打包时,maven会自动从镜像服务器上下载最新的快照版本.
+			如果是正式发布版本:
+			那么在mvn deploy时会自动发布到正式版本库中,
+			而使用正式版本的模块,在不更改版本号的情况下,编译打包时,如果本地已经存在该版本的模块则使用本地的而不是主动去镜像服务器上下载
+	-->
+	<distributionManagement>
+		<repository>
+			<id>nexus_releases</id>
+			<url>http://192.168.123.47:8686/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus_snapshots</id>
+			<url>http://192.168.123.47:8686/nexus/content/repositories/snapshots</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+  
+  <modules>
+  	<module>micro-space-web</module>
+  </modules>
+
+	<build>
+		<plugins>
+			<!-- 指定jdk 版本  maven-compiler-plugin用来编译Java代码-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!--maven-resources-plugin则用来处理资源文件，默认的主资源文件目录是src/main/resources，很多用户会要添加额外的资源文件目录，这个时候就可以通过配置maven-resources-plugin来实现  -->
+			<!--<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>-->
+			<!-- 打包插件 maven-assembly-plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<appendAssemblyId>false</appendAssemblyId>
+					<finalName>micro-server</finalName>
+					<descriptors>
+						<descriptor>package.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<!-- 对应maven 生命周期的不同阶段 -->
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
